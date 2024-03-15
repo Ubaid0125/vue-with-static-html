@@ -1,0 +1,77 @@
+$primary: #121330; // Example override for primary color
+$background: #F8F9FA;
+$grey: #9999a0;
+$gray-900: #121330;
+
+// $secondary: yellow;
+
+//We have to import the functions first to use map.merge()
+@import '../node_modules/bootstrap/scss/functions';
+
+// We have to import the variables beforehand to use the variable $grid-breakpoints.
+// Otherwise, compiler will show error - '$grid-breakpoints not defined.'
+@import '../node_modules/bootstrap/scss/variables';
+
+
+$new-breakpoints: (
+    xl: 1280px,
+    xxl:1600px
+);
+
+$grid-breakpoints: map-merge($grid-breakpoints, $new-breakpoints);
+
+$new-container-max-widths: (
+  xl: 1220px,
+  xxl:1520px
+);
+
+$container-max-widths: map-merge($container-max-widths, $new-container-max-widths);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+
+.check {
+  background-color: $background;
+  padding-inline: 54px;
+  padding-top: 107px;
+  padding-bottom: 154px;
+}
+
+.title {
+  color: $primary;
+  font-size: 24px;
+}
+
+.text {
+  color: $grey;
+  letter-spacing: 1.8px;
+  margin-top: 60px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.custom-placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.logo {
+  width: 142px;
+  height: 30px;
+  margin-bottom: 60px;
+}
+
+.option {
+  color: $grey;
+}
+

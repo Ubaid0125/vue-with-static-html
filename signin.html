@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome! Customize Bootstrap with Sass</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Outfit"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/customized_bootstrap.css" />
+  </head>
+  <body id="app">
+    <div class="row">
+      <div class="d-none d-lg-flex col-md-4 col-lg-5">
+        <div class="check">
+          <img src="../assets/Car.png" alt="" class="img-fluid" />
+          <p class="title text-center fw-semibold ln-32 mt-4">
+            Reinventing the way America compares car insurance
+          </p>
+          <p class="text text-center text-uppercase lh-16 fw-bold fs-12">
+            Trusted by teams at
+          </p>
+          <div class="d-flex justify-content-between mt-4">
+            <div>
+              <img src="../assets/CNN.png" alt="CNN" />
+            </div>
+            <div>
+              <img src="../assets/Forbes.png" alt="Forbes" />
+            </div>
+            <div>
+              <img src="../assets/USAToday.png" alt="USA Today" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-lg-7">
+        <div class="d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <img src="../assets/Logo.png" alt="" class="logo" />
+                <p class="fw-bold fs-4 mb-4 mt-0">Sign in to Bid Engine</p>
+                <form is="vue:Form" @submit="onSubmit">
+                  <div class="mb-4">
+                    <label for="email" class="form-label label"
+                      >Email Address</label
+                    >
+                    <Field
+                      type="email"
+                      class="form-control p-3 border border-2 border-gray-300"
+                      id="email"
+                      name="email"
+                      placeholder="Enter Email Address"
+                      aria-label="Email Address"
+                      :rules="validateEmail"
+                    ></Field>
+                    <span class="text-danger">{{ errors.email }}</span>
+                  </div>
+                  <div class="mb-4">
+                    <div class="d-flex justify-content-between">
+                      <label for="password" class="form-label label"
+                        >Password</label
+                      >
+                      <div>
+                        <a href="">Forgotten your password?</a>
+                      </div>
+                    </div>
+                    <Field
+                      type="password"
+                      class="form-control p-3 border border-2 border-gray-300"
+                      id="password"
+                      name="password"
+                      placeholder="Start Typing ..."
+                      aria-label="Password"
+                      :rules="required"
+                    ></Field>
+                    <span class="text-danger">{{ errors.password }}</span>
+                  </div>
+                  <div class="d-grid">
+                    <button
+                      class="btn btn-lg mb-2 border-0 rounded-pill text-center fw-semibold lh-18 p-3"
+                      :style="{ 
+                        fontSize: '15px',
+                        background: check ? 'linear-gradient(to right, rgba(153, 153, 160, 0.2), rgba(153, 153, 160, 0.2)), linear-gradient(to right, #0C4AE3, #90C5FF)' : 'rgba(153, 153, 160, 0.2)', // Change background to red if check is true
+                        color: check ? '#FFFFFF' : '#9999a0'
+                    }"
+                      type="submit"
+                    >
+                      Sign In
+                    </button>
+
+                    <div class="text-center">
+                      <p class="option">
+                        Don't have an account?
+                        <a href="./index.html">Sign Up</a>
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vee-validate"></script>
+    <script src="./js/validateSignIn.js"></script>
+  </body>
+</html>

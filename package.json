@@ -1,0 +1,26 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "compile:sass": "sass --watch custom_scss/custom.scss:assets/css/customized_bootstrap.css"
+  },
+  "repository": {},
+  "keywords": [
+    "bootstrap",
+    "sass"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {},
+  "homepage": "",
+  "devDependencies": {
+    "sass": "^1.42.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.4",
+    "bootstrap": "^5.1.1",
+    "postcss-cli": "^8.3.1"
+  }
+}
